@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Calculator app</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container theme_neon">
+
+    <div class="calculator">
+
+      <div class="calculator_header">
+        <div class="calculator_header_title">calc</div>
+        <div class="calculator_header_theme">
+          <ul class="calculator_header_theme_list">
+            <li class="theme_list_el">1</li>
+            <li class="theme_list_el">2</li>
+            <li class="theme_list_el">3</li>
+          </ul>
+          <div class="calculator_header_theme_changer">
+            <div class="theme_changer_text">theme</div>
+            <div class="theme_changer_button">
+              <div class="theme_changer_button_el theme_current" id="theme1"></div>
+              <div class="theme_changer_button_el" id="theme2"></div>
+              <div class="theme_changer_button_el" id="theme3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator_screen">
+        <div class="calculator_screen_number">399,981</div>
+      </div>
+
+      <div class="calculator_keypad">
+        <div class="calculator_keypad_key calculator_keypad_number number0">0</div>
+        <div class="calculator_keypad_key calculator_keypad_number number1">1</div>
+        <div class="calculator_keypad_key calculator_keypad_number number2">2</div>
+        <div class="calculator_keypad_key calculator_keypad_number number3">3</div>
+        <div class="calculator_keypad_key calculator_keypad_number number4">4</div>
+        <div class="calculator_keypad_key calculator_keypad_number number5">5</div>
+        <div class="calculator_keypad_key calculator_keypad_number number6">6</div>
+        <div class="calculator_keypad_key calculator_keypad_number number7">7</div>
+        <div class="calculator_keypad_key calculator_keypad_number number8">8</div>
+        <div class="calculator_keypad_key calculator_keypad_number number9">9</div>
+        <div class="calculator_keypad_key calculator_keypad_number decimal">.</div>
+        <div class="calculator_keypad_key calculator_keypad_operation add">+</div>
+        <div class="calculator_keypad_key calculator_keypad_operation subtract">-</div>
+        <div class="calculator_keypad_key calculator_keypad_operation multiply">x</div>
+        <div class="calculator_keypad_key calculator_keypad_operation divide">/</div>
+        <div class="calculator_keypad_key calculator_keypad_function delete">del</div>
+        <div class="calculator_keypad_key calculator_keypad_function reset">reset</div>
+        <div class="calculator_keypad_key calculator_keypad_function result">=</div>
+      </div>
+
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </div>
+
+  
+
+</body>
+</html>

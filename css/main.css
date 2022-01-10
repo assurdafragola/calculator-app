@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Spartan", sans-serif;
+}
+
+.calculator {
+  width: 90%;
+  max-width: 500px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator_header {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.calculator_header .calculator_header_title {
+  font-size: 28px;
+}
+.calculator_header .calculator_header_theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 11px;
+  width: 130px;
+}
+.calculator_header .calculator_header_theme .calculator_header_theme_list {
+  width: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.calculator_header .calculator_header_theme .calculator_header_theme_changer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_text {
+  text-transform: uppercase;
+}
+.calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
+  width: 66px;
+  height: 22px;
+  border-radius: 30px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.calculator_screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  font-size: 44px;
+  padding: 0 30px;
+  margin: 20px 0;
+}
+
+.calculator_keypad {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "seven eight nine del" "four five six add" "one two three subtract" "decimal zero divide multiply" "reset reset result result";
+  column-gap: 20px;
+  row-gap: 22px;
+  padding: 30px 25px;
+  place-items: center;
+  justify-content: center;
+}
+.calculator_keypad .number0 {
+  grid-area: zero;
+}
+.calculator_keypad .number1 {
+  grid-area: one;
+}
+.calculator_keypad .number2 {
+  grid-area: two;
+}
+.calculator_keypad .number3 {
+  grid-area: three;
+}
+.calculator_keypad .number4 {
+  grid-area: four;
+}
+.calculator_keypad .number5 {
+  grid-area: five;
+}
+.calculator_keypad .number6 {
+  grid-area: six;
+}
+.calculator_keypad .number7 {
+  grid-area: seven;
+}
+.calculator_keypad .number8 {
+  grid-area: eight;
+}
+.calculator_keypad .number9 {
+  grid-area: nine;
+}
+.calculator_keypad .decimal {
+  grid-area: decimal;
+}
+.calculator_keypad .add {
+  grid-area: add;
+}
+.calculator_keypad .subtract {
+  grid-area: subtract;
+}
+.calculator_keypad .multiply {
+  grid-area: multiply;
+}
+.calculator_keypad .divide {
+  grid-area: divide;
+}
+.calculator_keypad .result {
+  grid-area: result;
+}
+.calculator_keypad .delete {
+  grid-area: del;
+}
+.calculator_keypad .reset {
+  grid-area: reset;
+}
+
+.calculator_keypad {
+  border-radius: 10px;
+  font-size: 28px;
+}
+.calculator_keypad .calculator_keypad_key {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.calculator_keypad .calculator_keypad_function {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.container.theme_dark {
+  background-color: #3a4764;
+  color: white;
+}
+.container.theme_dark .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
+  background-color: #232c43;
+}
+.container.theme_dark .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+  background-color: #d03f2f;
+}
+.container.theme_dark .calculator .calculator_screen {
+  background-color: #182034;
+}
+.container.theme_dark .calculator .calculator_keypad {
+  background-color: #232c43;
+}
+.container.theme_dark .calculator .calculator_keypad .calculator_keypad_number, .container.theme_dark .calculator .calculator_keypad .calculator_keypad_operation {
+  background-color: #eae3dc;
+  box-shadow: 0 5px #b4a597;
+  color: #444b5a;
+}
+.container.theme_dark .calculator .calculator_keypad .delete, .container.theme_dark .calculator .calculator_keypad .reset {
+  background-color: #637097;
+  box-shadow: 0 5px #404e72;
+}
+.container.theme_dark .calculator .calculator_keypad .result {
+  background-color: #d03f2f;
+  box-shadow: 0 5px #93261a;
+}
+
+.container.theme_light {
+  background-color: #e6e6e6;
+  color: white;
+}
+.container.theme_light .calculator .calculator_header {
+  color: #35352c;
+}
+.container.theme_light .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
+  background-color: #d1cccc;
+}
+.container.theme_light .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+  background-color: #ca5502;
+}
+.container.theme_light .calculator .calculator_screen {
+  background-color: #ededed;
+  color: #35352c;
+}
+.container.theme_light .calculator .calculator_keypad {
+  background-color: #d1cccc;
+}
+.container.theme_light .calculator .calculator_keypad .calculator_keypad_number, .container.theme_light .calculator .calculator_keypad .calculator_keypad_operation {
+  background-color: #e5e4e1;
+  box-shadow: 0 5px #a69d91;
+  color: #35352c;
+}
+.container.theme_light .calculator .calculator_keypad .delete, .container.theme_light .calculator .calculator_keypad .reset {
+  background-color: #377f86;
+  box-shadow: 0 5px #1b5f65;
+}
+.container.theme_light .calculator .calculator_keypad .result {
+  background-color: #ca5502;
+  box-shadow: 0 5px #893901;
+}
+
+.container.theme_neon {
+  background-color: #160628;
+  color: #ffe53d;
+}
+.container.theme_neon .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
+  background-color: #1d0934;
+}
+.container.theme_neon .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+  background-color: #00e0d1;
+}
+.container.theme_neon .calculator .calculator_screen {
+  background-color: #1d0934;
+}
+.container.theme_neon .calculator .calculator_keypad {
+  background-color: #1d0934;
+}
+.container.theme_neon .calculator .calculator_keypad .calculator_keypad_number, .container.theme_neon .calculator .calculator_keypad .calculator_keypad_operation {
+  background-color: #341c4f;
+  box-shadow: 0 5px #871c9c;
+}
+.container.theme_neon .calculator .calculator_keypad .delete, .container.theme_neon .calculator .calculator_keypad .reset {
+  background-color: #58077d;
+  box-shadow: 0 5px #bc15f4;
+  color: white;
+}
+.container.theme_neon .calculator .calculator_keypad .result {
+  background-color: #00e0d1;
+  box-shadow: 0 5px #6cf9f2;
+  color: #1b2428;
+}
+
+/*# sourceMappingURL=main.css.map */

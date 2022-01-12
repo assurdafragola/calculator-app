@@ -213,6 +213,9 @@ body .container {
   justify-content: center;
   align-items: center;
 }
+.calculator_keypad .calculator_keypad_key:hover {
+  cursor: pointer;
+}
 .calculator_keypad .calculator_keypad_function {
   text-transform: uppercase;
   font-size: 18px;
@@ -239,7 +242,8 @@ body .container {
   box-shadow: 0 5px #b4a597;
   color: #444b5a;
 }
-.container.theme_dark .calculator .calculator_keypad .delete, .container.theme_dark .calculator .calculator_keypad .reset {
+.container.theme_dark .calculator .calculator_keypad .calculator_keypad_number:hover .delete,
+.container.theme_dark .calculator .calculator_keypad .reset {
   background-color: #637097;
   box-shadow: 0 5px #404e72;
 }

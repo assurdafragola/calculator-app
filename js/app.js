@@ -1,88 +1,107 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed!");
 
-//Toggle theme depending on the time of the day
+    //Toggle theme depending on the time of the day
 
-var today = new Date(); //liczba milisekund które upłyneły od północy 01.01.1970
-var currentHour = today.getHours();
-
-function setTheme () {
-    var themeContainer = document.querySelector('.container')
-    var morning = 6
-    var evening = 14
-    var night = 22
-    if (currentHour >= morning && currentHour < evening) {
-        themeContainer.classList.add("theme_light")
-    } else if (currentHour >= evening && currentHour < night) {
-        themeContainer.classList.add("theme_dark")
-    } else {
-        themeContainer.classList.add("theme_neon")
+    function setTheme () {
+        var today = new Date() //liczba milisekund które upłyneły od północy 01.01.1970
+        var currentHour = today.getHours()
+        var themeContainer = document.querySelector('.container')
+        var morning = 6
+        var evening = 14
+        var night =22
+        if (currentHour >= morning && currentHour < evening) {
+            themeContainer.classList.add("theme_light")
+        } else if (currentHour >= evening && currentHour < night) {
+            themeContainer.classList.add("theme_dark")
+        } else {
+            themeContainer.classList.add("theme_neon")
+        }
     }
-}
 
-setTheme();
+    setTheme();
 
+    //toggle theme based on theme button???
+    //remember preferred theme???
 
+    //Calculations
 
+    var newScreen = "";
+    var newOperation = null;
 
+    function updateScreen () {
+        document.querySelector('.calculator_screen_number').textContent = newScreen
+    }
 
+    function writeCalc (key) {
+        newScreen += key;
+        if (newOperation === null) {
+            newOperation = key
+        } else if (key === 'x') {
+            newOperation += '*'
+        } else {
+            newOperation += key
+        }
+        updateScreen();
+    }
 
+    var numbersBtn = document.querySelectorAll('.calculator_keypad_number')
 
-//Write keys on the screen (after clicking any number or operation)
+    for (var i=0; i<numbersBtn.length; i++) {
+        numbersBtn[i].addEventListener('click', function (event) {
+            writeCalc(event.target.textContent)}
+        );    
+    }
 
+    var operatorsBtn = document.querySelectorAll('.calculator_keypad_operation')
 
-// var keys = document.querySelectorAll('.calculator_keypad_number')
-// console.log(keys[0])
+    for (var i=0; i<operatorsBtn.length; i++) {
+        operatorsBtn[i].addEventListener('click', function (event) {
+            writeCalc(event.target.textContent)
+        });    
+    }
 
-// function writeNumber(el) {
-//     console.log(keys[el])
-// }
+    //RESULT
 
-// var keysContent = []
-// for (var i=0; i<keys.length; i++) {    
-//     keysContent.push(keys[i].textContent)
-// }
+    function makeCalculation () {
+        var result = eval(newOperation);
+        newScreen = result;
+        newOperation = result;
+        updateScreen();
+    }
 
-// for (var i=0; i<keys.length; i++) {
-//     keys[i].addEventListener('click', function(){
-//         var alala = i;
-//         console.log(alala)
-//     })
-// }
+    var resultBtn = document.querySelector('.result')
 
+    resultBtn.addEventListener('click', function() {
+        makeCalculation()
+    })
 
-// function changeScreen () {
-//     var screenContent = [0];
-//     var currentScreen = document.querySelector(".calculator_screen_number");
-//     console.log(currentScreen.textContent);
+    //DELETE
 
-//     function addScreenElement () {
-        
-//     }
+    function deleteCalc () {
+        newScreen = newScreen.substring(0, newScreen.length-1) 
+        newOperation = newOperation.substring(0, newOperation.length-1)
+        updateScreen()
+    }
 
-//     currentScreen.textContent = screenElement
+    var deleteBtn = document.querySelector('.delete')
 
+    deleteBtn.addEventListener('click', function() {
+        deleteCalc();
+    })
 
-// };
+    //RESET 
 
+    function resetCalc () {
+        newScreen = "";
+        newOperation = null;
+        updateScreen();
+    }
 
+    var resetBtn = document.querySelector('.reset')
 
+    resetBtn.addEventListener('click', function(){
+        resetCalc();
+    })
 
-//Make a calculation and return the result (after clicking =)
-
-
-//Reset screen to 0 (after clicking reset)
-
-
-//delete what was on the screen but remember previous result (after clicking del) or delete only last number/operation
-
-
-
-//toggle theme based on theme button
-
-
-
-
-//remember preferred theme
-
- });
+});

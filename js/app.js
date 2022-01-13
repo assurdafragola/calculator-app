@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Toggle theme depending on the time of the day
 
+    var themeContainer = document.querySelector('.container')
+
     function setTheme () {
         var today = new Date() //liczba milisekund które upłyneły od północy 01.01.1970
         var currentHour = today.getHours()
-        var themeContainer = document.querySelector('.container')
         var morning = 6
         var evening = 14
         var night =22
@@ -22,6 +23,33 @@ document.addEventListener("DOMContentLoaded", function () {
     setTheme();
 
     //toggle theme based on theme button???
+
+    var themes = ["theme_light", "theme_dark", "theme_neon"]
+
+    var theme1Btn = document.querySelector("#theme1")
+    var theme2Btn = document.querySelector("#theme2")
+    var theme3Btn = document.querySelector("#theme3")
+
+    function changeTheme (currentTheme) {
+        themeContainer.classList.remove("theme_light", "theme_dark", "theme_neon")
+        themeContainer.classList.add(currentTheme)
+    }
+
+
+    theme1Btn.addEventListener('click', function () {
+        changeTheme(themes[0])
+    })
+
+    theme2Btn.addEventListener('click', function () {
+        changeTheme(themes[1])
+    })
+
+    theme3Btn.addEventListener('click', function () {
+        changeTheme(themes[2])
+    })
+
+
+
     //remember preferred theme???
 
     //Calculations

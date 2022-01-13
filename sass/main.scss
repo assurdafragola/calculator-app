@@ -64,6 +64,10 @@ body {
                     height: 15px;
                     border-radius: 50%;
                 }                
+                .theme_changer_button_el:hover {
+                    cursor: pointer;
+                    background-color: rgba(83, 75, 74, 0.5)
+                }
             }
         }
     }
@@ -188,7 +192,7 @@ body {
                 .calculator_header_theme_changer {
                     .theme_changer_button {
                         background-color: hsl(223, 31%, 20%);
-                        .theme_changer_button_el.theme_current {
+                        #theme2 {
                             background-color: hsl(6, 63%, 50%)
                         }
                     }
@@ -231,7 +235,7 @@ body {
                 .calculator_header_theme_changer {
                     .theme_changer_button {
                         background-color: hsl(0, 5%, 81%);
-                        .theme_changer_button_el.theme_current {
+                        #theme1 {
                             background-color: hsl(25, 98%, 40%)
                         }
                     }
@@ -271,7 +275,7 @@ body {
                 .calculator_header_theme_changer {
                     .theme_changer_button {
                         background-color: hsl(268, 71%, 12%);
-                        .theme_changer_button_el.theme_current {
+                        #theme3 {
                             background-color: hsl(176, 100%, 44%)
                         }
                     }

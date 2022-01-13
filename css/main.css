@@ -118,6 +118,10 @@ body .container {
   height: 15px;
   border-radius: 50%;
 }
+.calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el:hover {
+  cursor: pointer;
+  background-color: rgba(83, 75, 74, 0.5);
+}
 
 .calculator_screen {
   display: flex;
@@ -228,7 +232,7 @@ body .container {
 .container.theme_dark .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
   background-color: #232c43;
 }
-.container.theme_dark .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+.container.theme_dark .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button #theme2 {
   background-color: #d03f2f;
 }
 .container.theme_dark .calculator .calculator_screen {
@@ -262,7 +266,7 @@ body .container {
 .container.theme_light .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
   background-color: #d1cccc;
 }
-.container.theme_light .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+.container.theme_light .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button #theme1 {
   background-color: #ca5502;
 }
 .container.theme_light .calculator .calculator_screen {
@@ -293,7 +297,7 @@ body .container {
 .container.theme_neon .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button {
   background-color: #1d0934;
 }
-.container.theme_neon .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button .theme_changer_button_el.theme_current {
+.container.theme_neon .calculator .calculator_header .calculator_header_theme .calculator_header_theme_changer .theme_changer_button #theme3 {
   background-color: #00e0d1;
 }
 .container.theme_neon .calculator .calculator_screen {
